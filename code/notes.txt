@@ -1,0 +1,36 @@
+if(ShowDemoWindow)
+    ImGui::ShowDemoWindow(&ShowDemoWindow);
+    {
+        static float f = 0.0f;
+        static int Counter = 0;
+
+        ImGui::Begin("Hello, World");
+            
+        ImGui::Text("This is some useful text");
+        ImGui::Checkbox("Demo Window", &ShowDemoWindow);
+        ImGui::Checkbox("Another Window", &ShowAnotherWindow);
+            
+        ImGui::SliderFloat("Float", &f, 0.0f, 1.0f);
+        ImGui::ColorEdit3("Clear Color", (float*)&ClearColor);
+            
+        if(ImGui::Button("Button"))
+            ++Counter;
+        ImGui::SameLine();
+        ImGui::Text("Counter = %d", Counter);
+            
+        ImGui::Text("Application average %.3f ms/frame (%.1f FPS)",
+                    1000.0f / ImGui::GetIO().Framerate,
+                    ImGui::GetIO().Framerate);
+            
+        ImGui::End();
+    }
+        
+    if(ShowAnotherWindow)
+    {
+        ImGui::Begin("Another Window", &ShowAnotherWindow);
+        ImGui::Text("Hello from another window");
+        if(ImGui::Button("Close Me"))
+            ShowAnotherWindow = false;
+        ImGui::End();
+    }
+}

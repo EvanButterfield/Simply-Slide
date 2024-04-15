@@ -1,0 +1,12 @@
+Escape: Close application
+
+File:
+    Control+N: New project
+    Control+S: Save, but if we don't have a file already, trigger a save as
+    Control+O: Open a Simply Slide project
+
+Menu:
+    Control+B: Compile
+
+Slides:
+    Control+Shift+N: New slide
